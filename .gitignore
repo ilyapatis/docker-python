@@ -1,0 +1,51 @@
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.db
+*.sqlite3
+*.log
+*.pot
+*.mo
+*.po
+MANIFEST
+env/
+venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE / Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Docs
+*.pdf
+*.md~  # бэкапы Markdown-файлов

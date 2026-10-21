@@ -17,6 +17,30 @@ See 'snap info docker' for additional versions.
 В случае наличия установленного в системе ```docker-compose``` - удалите его.
 2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```
 
+### Команды для установки компонентов docker
+
+```
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+sudo apt update
+
+sudo apt install -y ca-certificates curl gnupg lsb-release
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+### Повышение прав пользователя
+
+```
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
 ![docker](images/docker.png)
 
 ![compose](images/compose.png)
@@ -57,6 +81,21 @@ See 'snap info docker' for additional versions.
 6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
 
 ## [compose_file](compose.yml)
+
+### Команда для подключения к БД
+
+```
+docker exec -it mysql_db mysql -uroot -prootpass
+```
+
+### Запросы
+
+```
+show databases;
+use test;
+show tables;
+SELECT * from requests LIMIT 10;
+```
 
 ![sql](images/sql.png)
 

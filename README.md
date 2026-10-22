@@ -120,11 +120,7 @@ sudo ./deploy.sh
 ![check](images/check.png)
 ![ping](images/ping.png)
 
-### Останавливаем проект принудительно!
-
-```
-docker compose down --timeout 0
-```
+### Для остановки проекта используем команды в конце файла!
 
 ## Задача 5
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
